@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>館の謎解き - Hit & Blow</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            background-color: #444;
+        }
+        .input-block, .settings-block {
+            margin-bottom: 20px;
+        }
+        .input-block input, .settings-block select {
+            font-size: 1.5rem;
+            padding: 10px;
+            width: 200px;
+            margin-right: 10px;
+            border: 1px solid #fff;
+            background-color: #555;
+            color: #fff;
+        }
+        .input-block button, .settings-block button {
+            font-size: 1.5rem;
+            padding: 10px;
+            border: 1px solid #fff;
+            background-color: #555;
+            color: #fff;
+            cursor: pointer;
+        }
+        .input-block button:hover, .settings-block button:hover {
+            background-color: #666;
+        }
+        .result {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        .story {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        .dialogue {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>館の謎解き - Hit & Blow</h1>
+        <div class="story">
+            <p>あなたは謎の館に招かれた探偵です。館の主が残した暗号を解き明かし、真実にたどり着くことができるでしょうか？</p>
+            <p>館の中は薄暗く、冷たい風が吹き抜ける。壁には古びた絵画が掛けられ、どれも不気味な微笑を浮かべているように見える。足元の床板は軋み、まるで誰かがあなたの一挙手一投足を見守っているかのようだ。</p>
+        </div>
+        <div class="dialogue js-dialogue">
+            <p>館の主: 「探偵よ、この館に隠された秘密を解き明かしてみせよ。4桁の暗号を解読するのだ。成功すれば、真実が明らかになるだろう。しかし、失敗すれば...」</p>
+        </div>
+        <div class="settings-block">
+            <select class="js-difficulty">
+                <option value="easy">簡単</option>
+                <option value="medium">普通</option>
+                <option value="hard">難しい</option>
+            </select>
+            <button class="js-start-timer">タイムアタック開始</button>
+        </div>
+        <div class="input-block">
+            <input type="text" class="js-input" maxlength="4" placeholder="4桁の数字">
+            <button class="js-submit">判定</button>
+            <button class="js-submit-clear">クリア</button>
+        </div>
+        <div class="result">
+            <p><span class="js-result">入力した数字: </span></p>
+            <p><span class="js-result-hit">HIT: </span></p>
+            <p><span class="js-result-blow">BLOW: </span></p>
+        </div>
+        <div class="timer js-timer">残り時間: <span class="js-time">60</span>秒</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
